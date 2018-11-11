@@ -1,6 +1,7 @@
 package com.example.sahaj.mathlearns;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -20,39 +21,39 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EditText answerText;
-        final TextView Questions = (TextView) findViewById(R.id.Questions);
-        Questions.setText(Addition.askMe());
-        Button Submit = (Button) findViewById(R.id.Submit);
-        Submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText answerText = (EditText) findViewById(R.id.answerText);
-                Integer submitted = 0;
-                TextView correctTextView = (TextView) findViewById(R.id.Correct);
-                if(answerText.getText().length()==0){
-                    correctTextView.setText("Please submit an answer");
-                }else{
-                    if(answerText.getText().length()!=0) {
-                        submitted = Integer.parseInt(answerText.getText().toString());
-                }}
-                //    int submitted = Integer.parseInt(answerText.getText().toString());
-                Random randomGen  = new Random();
-                int num1 = randomGen.nextInt();
-                int num2 = randomGen.nextInt();
-                int result  = num1 + num2;
-
-                if(Addition.isRight(submitted) == 1){
-                    correctTextView.setText("Correct");
-                    Questions.setText(Addition.askMe());
-                }else {
-                    if (Addition.isRight(submitted) == -1) {
-                        correctTextView.setText("Try Again");
-                    }
-                }
-            }
-        }
-        );
+//        EditText answerText;
+//        final TextView Questions = (TextView) findViewById(R.id.Questions);
+//        Questions.setText(Addition.askMe());
+//        Button Submit = (Button) findViewById(R.id.Submit);
+//        Submit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                EditText answerText = (EditText) findViewById(R.id.answerText);
+//                Integer submitted = 0;
+//                TextView correctTextView = (TextView) findViewById(R.id.Correct);
+//                if(answerText.getText().length()==0){
+//                    correctTextView.setText("Please submit an answer");
+//                }else{
+//                    if(answerText.getText().length()!=0) {
+//                        submitted = Integer.parseInt(answerText.getText().toString());
+//                }}
+//                //    int submitted = Integer.parseInt(answerText.getText().toString());
+//                Random randomGen  = new Random();
+//                int num1 = randomGen.nextInt();
+//                int num2 = randomGen.nextInt();
+//                int result  = num1 + num2;
+//
+//                if(Addition.isRight(submitted) == 1){
+//                    correctTextView.setText("Correct");
+//                    Questions.setText(Addition.askMe());
+//                }else {
+//                    if (Addition.isRight(submitted) == -1) {
+//                        correctTextView.setText("Try Again");
+//                    }
+//                }
+//            }
+//        }
+//        );
 
 
     }
@@ -72,7 +73,8 @@ public class MainActivity extends AppCompatActivity {
             return true;
 
             case R.id.subitem1:
-                Toast.makeText(this, "SUB1", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(this, "SUB1", Toast.LENGTH_SHORT).show();
+                openAdd1();
                 return true;
 
             case R.id.subitem2:
@@ -81,5 +83,9 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+    public void openAdd1(){
+        Intent add1 = new Intent(this, addLevOne.class);
+        startActivity(add1);
     }
 }
