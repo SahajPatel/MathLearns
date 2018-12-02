@@ -1,7 +1,7 @@
 package com.example.sahaj.mathlearns;
 
 import java.util.Random;
-public class Subtraction {
+public class AdditionTwo {
 
 
 
@@ -11,7 +11,7 @@ public class Subtraction {
     static int num2 = 0;
     static int result  = 0;
     public static int isRight(Integer submitted){
-        result  = num1 - num2;
+        result  = num1 + num2;
         if(submitted == result) {
             return 1;
         }
@@ -23,14 +23,14 @@ public class Subtraction {
         }
         return 0;
     }
-    public static String askMes(){
-        num1 = randomGen.nextInt(20-1)+1;
-        num2 = randomGen.nextInt(20-1)+1;
-        return "What is " + num1 + " - " + num2;
-    }
-    public static String askMes2(){
+//    public static String askMe(){
+//        num1 = randomGen.nextInt(20-1)+1;
+//        num2 = randomGen.nextInt(20-1)+1;
+//        return "What is " + num1 + " + " + num2;
+//    }
+    public static String askMee(){
         num1 = randomGen.nextInt(100-1)+1;
         num2 = randomGen.nextInt(100-1)+1;
-        return "What is " + num1 + " - " + num2;
+        return "What is " + num1 + " + " + num2;
     }
 }

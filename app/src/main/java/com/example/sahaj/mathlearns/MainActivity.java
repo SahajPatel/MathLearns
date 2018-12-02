@@ -78,7 +78,22 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.subitem2:
-                Toast.makeText(this, "SUB2", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "SUB2", Toast.LENGTH_SHORT).show();
+                openAdd2();
+                return true;
+
+            case R.id.minusLevel:
+                Toast.makeText(this, "Subtraction selected", Toast.LENGTH_SHORT).show();
+                return true;
+
+            case R.id.subitem3:
+                // Toast.makeText(this, "SUB1", Toast.LENGTH_SHORT).show();
+                openSub1();
+                return true;
+
+            case R.id.subitem4:
+                //Toast.makeText(this, "SUB2", Toast.LENGTH_SHORT).show();
+                openSub2();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

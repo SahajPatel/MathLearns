@@ -16,7 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity android:name=".addLevOne"></activity>
+
+
+        <activity android:name=".addLevTwo"></activity>
+
+        <activity android:name=".subLevOne"></activity>
+
+        <activity android:name=".subLevTwo"></activity>
+
+
     </application>
 
 </manifest>

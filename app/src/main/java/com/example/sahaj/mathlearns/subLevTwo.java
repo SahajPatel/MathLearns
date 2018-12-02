@@ -7,10 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.sahaj.mathlearns.Addition;
-import com.example.sahaj.mathlearns.R;
-
 import java.util.Random;
+
 
 public class subLevTwo extends AppCompatActivity {
 
@@ -40,7 +38,7 @@ public class subLevTwo extends AppCompatActivity {
                                           int num2 = randomGen.nextInt();
                                           int result  = num1 - num2;
 
-                                          if(Addition.isRight(submitted) == 1){
+                                          if(Subtraction.isRight(submitted) == 1){
                                               correctTextView.setText("Correct");
                                               Questions.setText(Subtraction.askMes2());
                                           }else {
