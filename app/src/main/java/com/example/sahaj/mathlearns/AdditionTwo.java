@@ -7,10 +7,10 @@ public class AdditionTwo {
 
     //    int submitted = Integer.parseInt(answerText.getText().toString());
     static Random randomGen  = new Random();
-    static int num1 = 0;
-    static int num2 = 0;
-    static int result  = 0;
-    public static int isRight(Integer submitted){
+    static double num1 = 0;
+    static double num2 = 0;
+    static double result  = 0;
+    public static double isRight(Double submitted){
         result  = num1 + num2;
         if(submitted == result) {
             return 1;

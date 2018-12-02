@@ -21,13 +21,13 @@ public class addLevOne extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText answerText = findViewById(R.id.answerText);
-                Integer submitted = 0;
+                double submitted = 0;
                 TextView correctTextView =  findViewById(R.id.Correct);
                 if(answerText.getText().length()==0){
                     correctTextView.setText("Please submit an answer");
                 }else{
                     if(answerText.getText().length()!=0) {
-                        submitted = Integer.parseInt(answerText.getText().toString());
+                        submitted = Double.parseDouble(answerText.getText().toString());
                 }}
 
                 if(Addition.isRight(submitted) == 1){

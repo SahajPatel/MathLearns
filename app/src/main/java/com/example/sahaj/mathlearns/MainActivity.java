@@ -21,41 +21,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        EditText answerText;
-//        final TextView Questions = (TextView) findViewById(R.id.Questions);
-//        Questions.setText(Addition.askMe());
-//        Button Submit = (Button) findViewById(R.id.Submit);
-//        Submit.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                EditText answerText = (EditText) findViewById(R.id.answerText);
-//                Integer submitted = 0;
-//                TextView correctTextView = (TextView) findViewById(R.id.Correct);
-//                if(answerText.getText().length()==0){
-//                    correctTextView.setText("Please submit an answer");
-//                }else{
-//                    if(answerText.getText().length()!=0) {
-//                        submitted = Integer.parseInt(answerText.getText().toString());
-//                }}
-//                //    int submitted = Integer.parseInt(answerText.getText().toString());
-//                Random randomGen  = new Random();
-//                int num1 = randomGen.nextInt();
-//                int num2 = randomGen.nextInt();
-//                int result  = num1 + num2;
-//
-//                if(Addition.isRight(submitted) == 1){
-//                    correctTextView.setText("Correct");
-//                    Questions.setText(Addition.askMe());
-//                }else {
-//                    if (Addition.isRight(submitted) == -1) {
-//                        correctTextView.setText("Try Again");
-//                    }
-//                }
-//            }
-//        }
-//        );
-
-
     }
 
     @Override
@@ -69,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
             case R.id.addingLevel:
-            Toast.makeText(this, "Addition selected", Toast.LENGTH_SHORT).show();
-            return true;
+                Toast.makeText(this, "Addition selected", Toast.LENGTH_SHORT).show();
+                return true;
 
             case R.id.subitem1:
                // Toast.makeText(this, "SUB1", Toast.LENGTH_SHORT).show();
@@ -87,13 +52,23 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.subitem3:
-                // Toast.makeText(this, "SUB1", Toast.LENGTH_SHORT).show();
                 openSub1();
                 return true;
 
             case R.id.subitem4:
-                //Toast.makeText(this, "SUB2", Toast.LENGTH_SHORT).show();
                 openSub2();
+                return true;
+
+            case R.id.timesLevel:
+                Toast.makeText(this, "Multiplication selected", Toast.LENGTH_SHORT).show();
+                return true;
+
+            case R.id.subitem5:
+                openMult1();
+                return true;
+
+            case R.id.subitem6:
+                openMult2();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -114,5 +89,13 @@ public class MainActivity extends AppCompatActivity {
     public void openSub2(){
         Intent sub2 = new Intent(this, subLevTwo.class);
         startActivity(sub2);
+    }
+    public void openMult1(){
+        Intent mult1 = new Intent(this, multLevOne.class);
+        startActivity(mult1);
+    }
+    public void openMult2(){
+        Intent mult2 = new Intent(this, multLevTwo.class);
+        startActivity(mult2);
     }
 }

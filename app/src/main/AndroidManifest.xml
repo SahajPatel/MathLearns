@@ -27,6 +27,13 @@
 
         <activity android:name=".subLevTwo"></activity>
 
+        <activity android:name=".multLevOne"></activity>
+
+        <activity android:name=".multLevTwo"></activity>
+
+        <!-- <activity android:name=".divLevone"></activity> -->
+
+        <!-- <activity android:name=".divLevtwo"></activity> -->
 
     </application>
 
