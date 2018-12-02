@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".addLevOne">
+    tools:context=".addLevTwo">
+
 
     <TextView
-        android:id="@+id/Questions"
+        android:id="@+id/Questionss"
         android:layout_width="199dp"
         android:layout_height="48dp"
         android:layout_marginTop="7dp"
@@ -18,7 +19,7 @@
         app:layout_constraintVertical_bias="0.189" />
 
     <Button
-        android:id="@+id/Submit"
+        android:id="@+id/Submits"
         android:layout_width="104dp"
         android:layout_height="53dp"
         android:layout_marginStart="8dp"
@@ -35,7 +36,7 @@
         app:layout_constraintVertical_bias="0.812" />
 
     <EditText
-        android:id="@+id/answerText"
+        android:id="@+id/answerTexts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -46,18 +47,16 @@
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="Submit here."
-        android:inputType="number|text"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.567" />
-    <!--
-            android:inputType="number|text|numberDecimal"
-            -->
+
     <TextView
-        android:id="@+id/Correct"
+        android:id="@+id/Corrects"
         android:layout_width="116dp"
         android:layout_height="64dp"
         android:layout_marginStart="8dp"
@@ -66,11 +65,11 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/answerText"
+        app:layout_constraintBottom_toTopOf="@+id/answerTexts"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Questions"
+        app:layout_constraintTop_toBottomOf="@+id/Questionss"
         app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>

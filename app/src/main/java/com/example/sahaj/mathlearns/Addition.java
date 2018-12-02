@@ -28,9 +28,9 @@ public class Addition {
         num2 = randomGen.nextInt(20-1)+1;
         return "What is " + num1 + " + " + num2;
     }
-    public static String askMe2(){
-        num1 = randomGen.nextInt(100-1)+1;
-        num2 = randomGen.nextInt(100-1)+1;
-        return "What is " + num1 + " + " + num2;
-    }
+//    public static String askMee(){
+//        num1 = randomGen.nextInt(100-1)+1;
+//        num2 = randomGen.nextInt(100-1)+1;
+//        return "What is " + num1 + " + " + num2;
+//    }
 }

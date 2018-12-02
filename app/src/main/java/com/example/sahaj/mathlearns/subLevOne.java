@@ -7,10 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.sahaj.mathlearns.Addition;
-import com.example.sahaj.mathlearns.R;
-
 import java.util.Random;
+
 
 public class subLevOne extends AppCompatActivity {
 
@@ -32,7 +30,8 @@ public class subLevOne extends AppCompatActivity {
                                               correctTextView.setText("Please submit an answer");
                                           }else{
                                               if(answerText.getText().length()!=0) {
-                                                  submitted = Integer.parseInt(answerText.getText().toString());
+                                                 submitted = Integer.parseInt(answerText.getText().toString());
+//hi
                                               }}
                                           //    int submitted = Integer.parseInt(answerText.getText().toString());
                                           Random randomGen  = new Random();
@@ -40,7 +39,7 @@ public class subLevOne extends AppCompatActivity {
                                           int num2 = randomGen.nextInt();
                                           int result  = num1 - num2;
 
-                                          if(Addition.isRight(submitted) == 1){
+                                          if(Subtraction.isRight(submitted) == 1){
                                               correctTextView.setText("Correct");
                                               Questions.setText(Subtraction.askMes());
                                           }else {
