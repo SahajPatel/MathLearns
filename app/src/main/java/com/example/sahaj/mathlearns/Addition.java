@@ -4,8 +4,25 @@ import java.util.Random;
 public class Addition {
 
 
+    public static int getCorrect() {
+        return correct;
+    }
 
-//    int submitted = Integer.parseInt(answerText.getText().toString());
+    public static void setCorrect(int correct) {
+        Addition.correct = correct;
+    }
+
+    public static int getDifficulty() {
+        return difficulty;
+    }
+
+    public static void setDifficulty(int difficulty) {
+        Addition.difficulty = difficulty;
+    }
+
+    //    int submitted = Integer.parseInt(answerText.getText().toString());
+    static int correct = 0;
+    static int difficulty = 20;
     static Random randomGen  = new Random();
     static double num1 = 0;
     static double num2 = 0;
@@ -24,13 +41,9 @@ public class Addition {
         return 0.0;
     }
     public static String askMe(){
-        num1 = randomGen.nextInt(20-1)+1;
-        num2 = randomGen.nextInt(20-1)+1;
+        num1 = randomGen.nextInt(difficulty-1)+1;
+        num2 = randomGen.nextInt(difficulty-1)+1;
         return "What is " + num1 + " + " + num2;
     }
-//    public static String askMee(){
-//        num1 = randomGen.nextInt(100-1)+1;
-//        num2 = randomGen.nextInt(100-1)+1;
-//        return "What is " + num1 + " + " + num2;
-//    }
+
 }

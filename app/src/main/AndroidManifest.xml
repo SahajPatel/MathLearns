@@ -20,7 +20,6 @@
 
         <activity android:name=".addLevOne"></activity>
 
-
         <activity android:name=".addLevTwo"></activity>
 
         <activity android:name=".subLevOne"></activity>
