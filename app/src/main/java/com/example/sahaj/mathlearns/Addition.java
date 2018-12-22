@@ -1,5 +1,8 @@
 package com.example.sahaj.mathlearns;
 
+import android.graphics.Color;
+import android.view.View;
+
 import java.util.Random;
 public class Addition {
 
@@ -19,6 +22,9 @@ public class Addition {
     public static void setDifficulty(int difficulty) {
         Addition.difficulty = difficulty;
     }
+
+
+
 
     //    int submitted = Integer.parseInt(answerText.getText().toString());
     static int correct = 0;

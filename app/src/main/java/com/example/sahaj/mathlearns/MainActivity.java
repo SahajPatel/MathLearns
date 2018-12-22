@@ -2,6 +2,7 @@ package com.example.sahaj.mathlearns;
 
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.widget.DrawerLayout;
@@ -21,9 +22,32 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    private boolean isDay = true;
+    View viewmain;
+
+    public boolean isDay() {
+        return isDay;
+    }
+
+    public void setDay(boolean day) {
+        isDay = day;
+    }
+
+    boolean isDay = true;
+
+
     private DrawerLayout drawLay;
     private ActionBarDrawerToggle mtog;
+
+    //Day_Test_Class datobj = new Day_Test_Class();
+    public void change(){
+        if(isDay){
+        viewmain.setBackgroundColor(Color.WHITE);
+        }
+        else {
+            viewmain.setBackgroundColor(Color.BLACK);
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
         mtog.syncState();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        viewmain = this.getWindow().getDecorView();
+
     }
 
     @Override
@@ -135,5 +161,6 @@ public class MainActivity extends AppCompatActivity {
         Intent day1 = new Intent(this, Day_Test_Class.class);
         startActivity(day1);
     }
+
 
 }

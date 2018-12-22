@@ -15,6 +15,17 @@ import android.widget.Toast;
 
 
 public class addLevOne extends AppCompatActivity {
+    View viewadd;
+    public static boolean isDa() {
+        return Da;
+    }
+
+    public static void setDa(boolean isDa) {
+        addLevOne.Da = isDa;
+    }
+
+    static boolean Da;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +44,8 @@ public class addLevOne extends AppCompatActivity {
         Level.setTextColor(Color.CYAN);
         Level.setText("Addition Level " + (Addition.getDifficulty()-3));
 
+        viewadd = this.getWindow().getDecorView();
+
         Button Submit = findViewById(R.id.Submit);
 
         final TextView correctView = findViewById(R.id.correctCount);
@@ -43,6 +56,12 @@ public class addLevOne extends AppCompatActivity {
                                       public void onClick(View v) {
 
                                           EditText answerText = findViewById(R.id.answerText);
+//                                          if(Da){
+//                                              answerText.setTextColor(Color.WHITE);
+//                                          }
+//                                          else{
+//                                              answerText.setTextColor(Color.BLACK);
+//                                          }
                                           double submitted = 0;
                                           TextView correctTextView = findViewById(R.id.Correct);
                                           if (answerText.getText().length() == 0) {
@@ -87,7 +106,19 @@ public class addLevOne extends AppCompatActivity {
                 }
             }
         });
+
+        if(!Da){
+            viewadd.setBackgroundColor(Color.WHITE);
+        }
+        else{
+            viewadd.setBackgroundColor(Color.BLACK);
+            Questions.setTextColor(Color.WHITE);
+
+        }
+
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -147,10 +178,16 @@ public class addLevOne extends AppCompatActivity {
 //                Toast.makeText(this, "Multiplication selected", Toast.LENGTH_SHORT).show();
                 openDiv();
                 return true;
+
+            case R.id.dayLevel:
+//                Toast.makeText(this, "Multiplication selected", Toast.LENGTH_SHORT).show();
+                openday();
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
-        }
-    }
+        }}
+
     public void openAdd1(){
         Intent add1 = new Intent(this, addLevOne.class);
         startActivity(add1);
@@ -178,5 +215,9 @@ public class addLevOne extends AppCompatActivity {
     public void openDiv(){
         Intent div1 = new Intent(this, divLev.class);
         startActivity(div1);
+    }
+    public void openday(){
+        Intent day1 = new Intent(this, Day_Test_Class.class);
+        startActivity(day1);
     }
 }
