@@ -57,13 +57,14 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:text="Night"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.881"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.629"
-        tools:background="@android:drawable/btn_star_big_off" />
+        tools:background="@android:drawable/editbox_dropdown_dark_frame" />
 
     <Switch
         android:id="@+id/switch1"
@@ -83,5 +84,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.884" />
+    <!--android:onClick="NightMet"-->
 
 </android.support.constraint.ConstraintLayout>

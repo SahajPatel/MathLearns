@@ -35,8 +35,11 @@
 
         <!-- <activity android:name=".divLevtwo"></activity> -->
         <activity android:name=".mainMenu"></activity>
-        <activity android:name=".Day_Test_Class"
-            tools:ignore="DuplicateActivity"></activity>
+        <activity android:name=".Day_Test_Class">
+            <intent-filter>
+                <action android:name="android.intent.action.RUN"></action>
+            </intent-filter>
+        </activity>
 
     </application>
 
