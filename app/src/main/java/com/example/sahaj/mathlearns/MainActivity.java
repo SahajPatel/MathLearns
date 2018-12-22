@@ -3,7 +3,11 @@ package com.example.sahaj.mathlearns;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,10 +21,20 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    private boolean isDay = true;
+    private DrawerLayout drawLay;
+    private ActionBarDrawerToggle mtog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        drawLay = (DrawerLayout) findViewById(R.id.drawerLayout);
+        mtog = new ActionBarDrawerToggle(this, drawLay, R.string.open, R.string.close);
+
+        drawLay.addDrawerListener(mtog);
+        mtog.syncState();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -73,9 +87,20 @@ public class MainActivity extends AppCompatActivity {
 //            case R.id.subitem6:
 //                openMult2();
 //                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+            case R.id.mainMenus:
+//                Toast.makeText(this, "Multiplication selected", Toast.LENGTH_SHORT).show();
+                openMain();
+                return true;
+
+            case R.id.dayLevel:
+//                Toast.makeText(this, "Multiplication selected", Toast.LENGTH_SHORT).show();
+                openday();
+                return true;
         }
+            if(mtog.onOptionsItemSelected(item)){
+                return true;
+            }
+                return super.onOptionsItemSelected(item);
     }
     public void openAdd1(){
         Intent add1 = new Intent(this, addLevOne.class);
@@ -101,4 +126,14 @@ public class MainActivity extends AppCompatActivity {
 //        Intent mult2 = new Intent(this, multLevTwo.class);
 //        startActivity(mult2);
 //    }
+    public void openMain(){
+        Intent main1 = new Intent(this, mainMenu.class);
+        startActivity(main1);
+    }
+
+    public void openday(){
+        Intent day1 = new Intent(this, Day_Test_Class.class);
+        startActivity(day1);
+    }
+
 }

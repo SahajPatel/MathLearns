@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.sahaj.mathlearns">
 
     <application
@@ -30,9 +31,12 @@
 
         <activity android:name=".multLevTwo"></activity>
 
-        <!-- <activity android:name=".divLevone"></activity> -->
+         <activity android:name=".divLev"></activity>
 
         <!-- <activity android:name=".divLevtwo"></activity> -->
+        <activity android:name=".mainMenu"></activity>
+        <activity android:name=".Day_Test_Class"
+            tools:ignore="DuplicateActivity"></activity>
 
     </application>
 

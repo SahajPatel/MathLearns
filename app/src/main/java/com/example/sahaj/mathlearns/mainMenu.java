@@ -14,79 +14,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class addLevOne extends AppCompatActivity {
+public class mainMenu extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        final int level = 1;
-        final int correct = 0;
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_lev_one);
-
-        Button increase = findViewById(R.id.increase);
-        Button decrease = findViewById(R.id.decrease);
-
-        final TextView Questions = findViewById(R.id.Questions);
-        Questions.setText(Addition.askMe());
-
-        final TextView Level = findViewById(R.id.Level);
-        Level.setTextColor(Color.CYAN);
-        Level.setText("Addition Level " + (Addition.getDifficulty()-3));
-
-        Button Submit = findViewById(R.id.Submit);
-
-        final TextView correctView = findViewById(R.id.correctCount);
-        correctView.setTextColor(Color.GREEN);
-
-        Submit.setOnClickListener(new View.OnClickListener() {
-                                      @Override
-                                      public void onClick(View v) {
-
-                                          EditText answerText = findViewById(R.id.answerText);
-                                          double submitted = 0;
-                                          TextView correctTextView = findViewById(R.id.Correct);
-                                          if (answerText.getText().length() == 0) {
-                                              correctTextView.setText("Please submit an answer");
-                                          } else {
-                                              if (answerText.getText().length() != 0) {
-                                                  submitted = Double.parseDouble(answerText.getText().toString());
-                                              }
-                                          }
-
-                                          if (Addition.isRight(submitted) == 1) {
-                                              correctTextView.setTextColor(Color.GREEN);
-                                              correctTextView.setText("Correct");
-                                              Addition.setCorrect(Addition.getCorrect() + 1);
-                                              correctView.setText(Integer.toString(Addition.getCorrect()));
-                                              Questions.setText(Addition.askMe());
-                                          } else {
-                                              if (Addition.isRight(submitted) == -1) {
-                                                  correctTextView.setTextColor(Color.RED);
-                                                  correctTextView.setText("Try Again");
-                                              }
-                                          }
-                                      }
-                                  }
-        );
-
-        increase.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Addition.setDifficulty(Addition.getDifficulty()+1);
-                Level.setText("Addition Level " + (Addition.getDifficulty()-3));
-
-            }
-        });
-
-        decrease.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(Addition.getDifficulty() >= 5) {
-                    Addition.setDifficulty(Addition.getDifficulty() - 1);
-                    Level.setText("Addition Level " + (Addition.getDifficulty()-3));
-                }
-            }
-        });
+        setContentView(R.layout.activity_main);
     }
 
     @Override

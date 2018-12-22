@@ -1,6 +1,7 @@
 package com.example.sahaj.mathlearns;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -14,11 +15,21 @@ import android.widget.TextView;
 public class multLevOne extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final int level = 1;
+        final int correct = 0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_lev_one);
+
+        Button increase = findViewById(R.id.increase);
+        Button decrease = findViewById(R.id.decrease);
+
         final TextView Questions =  findViewById(R.id.Questions);
         Questions.setText(Multiplicationz.askMe());
         Button Submit = findViewById(R.id.Submit);
+
+        final TextView correctView = findViewById(R.id.correctCount);
+        correctView.setTextColor(Color.GREEN);
+
         Submit.setOnClickListener(new View.OnClickListener() {
                                       @Override
                                       public void onClick(View v) {
@@ -33,16 +44,36 @@ public class multLevOne extends AppCompatActivity {
                                               }}
 
                                           if(Multiplicationz.isRight(submitted) == 1){
+                                              correctTextView.setTextColor(Color.GREEN);
                                               correctTextView.setText("Correct");
+                                              Multiplicationz.setCorrect(Multiplicationz.getCorrect() + 1);
+                                              correctView.setText(Integer.toString(Multiplicationz.getCorrect()));
                                               Questions.setText(Multiplicationz.askMe());
                                           }else {
                                               if (Multiplicationz.isRight(submitted) == -1) {
+                                                  correctTextView.setTextColor(Color.RED);
                                                   correctTextView.setText("Try Again");
                                               }
                                           }
                                       }
                                   }
         );
+        increase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Multiplicationz.setDifficulty(Multiplicationz.getDifficulty()+1);
+
+            }
+        });
+
+        decrease.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Multiplicationz.getDifficulty() >= 5) {
+                    Multiplicationz.setDifficulty(Multiplicationz.getDifficulty() - 1);
+                }
+            }
+        });
     }
 
 
@@ -96,6 +127,14 @@ public class multLevOne extends AppCompatActivity {
 //            case R.id.subitem6:
 //                openMult2();
 //                return true;
+            case R.id.mainMenus:
+//                Toast.makeText(this, "Multiplication selected", Toast.LENGTH_SHORT).show();
+                openMain();
+                return true;
+            case R.id.divideLevel:
+//                Toast.makeText(this, "Multiplication selected", Toast.LENGTH_SHORT).show();
+                openDiv();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -119,5 +158,13 @@ public class multLevOne extends AppCompatActivity {
     public void openMult1(){
         Intent mult1 = new Intent(this, multLevOne.class);
         startActivity(mult1);
+    }
+    public void openMain(){
+        Intent main1 = new Intent(this, mainMenu.class);
+        startActivity(main1);
+    }
+    public void openDiv(){
+        Intent div1 = new Intent(this, divLev.class);
+        startActivity(div1);
     }
 }

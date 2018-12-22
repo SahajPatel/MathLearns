@@ -23,6 +23,7 @@ public class Addition {
     //    int submitted = Integer.parseInt(answerText.getText().toString());
     static int correct = 0;
     static int difficulty = 20;
+
     static Random randomGen  = new Random();
     static double num1 = 0;
     static double num2 = 0;

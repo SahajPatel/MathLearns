@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    xmlns:app = "http://schemas.android.com/apk/res-auto">
 
+    <item android:id = "@+id/mainMenus"
+        android:title="Main Menu"
+        app:showAsAction="never" >
+        <!--<menu>-->
+        <!--<item android:id="@+id/subitem1"-->
+        <!--android:title = "Level One"/>-->
+        <!--&lt;!&ndash;<item android:id="@+id/subitem2"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:title = "Level Two"/>&ndash;&gt;-->
+        <!--</menu>-->
+    </item>
     <item android:id = "@+id/addingLevel"
         android:title="Addition"
         app:showAsAction="never" >
@@ -46,6 +55,16 @@
                 <!--android:title = "Level One"/>-->
             <!--&lt;!&ndash;<item android:id="@+id/subitem8"&ndash;&gt;-->
                 <!--&lt;!&ndash;android:title = "Level Two"/>&ndash;&gt;-->
+        <!--</menu>-->
+    </item>
+    <item android:id = "@+id/dayLevel"
+        android:title="Day Test"
+        app:showAsAction="never" >
+        <!--<menu>-->
+        <!--<item android:id="@+id/subitem7"-->
+        <!--android:title = "Level One"/>-->
+        <!--&lt;!&ndash;<item android:id="@+id/subitem8"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:title = "Level Two"/>&ndash;&gt;-->
         <!--</menu>-->
     </item>
 

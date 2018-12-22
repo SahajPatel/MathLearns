@@ -1,6 +1,7 @@
 package com.example.sahaj.mathlearns;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -20,10 +22,22 @@ public class subLevOne extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_lev_one);
+        Button increase = findViewById(R.id.increase);
+        Button decrease = findViewById(R.id.decrease);
+
         EditText answerText;
         final TextView Questions = (TextView) findViewById(R.id.Questions);
         Questions.setText(Subtraction.askMes());
+
         Button Submit = (Button) findViewById(R.id.Submit);
+
+        final TextView Level = findViewById(R.id.Level);
+        Level.setTextColor(Color.CYAN);
+        Level.setText("Subtraction Level " + (Subtraction.getDifficulty()-3));
+
+        final TextView correctView = findViewById(R.id.correctCount);
+        correctView.setTextColor(Color.GREEN);
+
         Submit.setOnClickListener(new View.OnClickListener() {
                                       @Override
                                       public void onClick(View v) {
@@ -44,16 +58,39 @@ public class subLevOne extends AppCompatActivity {
                                           int result  = num1 - num2;
 
                                           if(Subtraction.isRight(submitted) == 1){
+                                              correctTextView.setTextColor(Color.GREEN);
                                               correctTextView.setText("Correct");
+                                              Subtraction.setCorrect(Subtraction.getCorrect() + 1);
+                                              correctView.setText(Integer.toString(Subtraction.getCorrect()));
                                               Questions.setText(Subtraction.askMes());
                                           }else {
                                               if (Subtraction.isRight(submitted) == -1) {
+                                                  correctTextView.setTextColor(Color.RED);
                                                   correctTextView.setText("Try Again");
                                               }
                                           }
                                       }
                                   }
         );
+        increase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Subtraction.setDifficulty(Subtraction.getDifficulty()+1);
+                Level.setText("Subtraction Level " + (Subtraction.getDifficulty()-3));
+
+            }
+        });
+
+        decrease.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Subtraction.getDifficulty() >= 5) {
+                    Subtraction.setDifficulty(Subtraction.getDifficulty() - 1);
+                    Level.setText("Subtraction Level " + (Subtraction.getDifficulty()-3));
+
+                }
+            }
+        });
     }
 
     @Override
@@ -106,6 +143,23 @@ public class subLevOne extends AppCompatActivity {
 //            case R.id.subitem6:
 //                openMult2();
 //                return true;
+            case R.id.mainMenus:
+//                Toast.makeText(this, "Multiplication selected", Toast.LENGTH_SHORT).show();
+                openMain();
+                return true;
+            case R.id.divideLevel:
+//                Toast.makeText(this, "Multiplication selected", Toast.LENGTH_SHORT).show();
+                openDiv();
+                return true;
+
+//            case R.id.day_Mode:
+//               Toast.makeText(this, "Day mode selected", Toast.LENGTH_SHORT).show();
+//                openDay();
+//                return true;
+//            case R.id.night_Mode:
+//                Toast.makeText(this, "Night mode selected", Toast.LENGTH_SHORT).show();
+//                openNight();
+//                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -130,4 +184,23 @@ public class subLevOne extends AppCompatActivity {
         Intent mult1 = new Intent(this, multLevOne.class);
         startActivity(mult1);
     }
+    public void openMain(){
+        Intent main1 = new Intent(this, mainMenu.class);
+        startActivity(main1);
+    }
+
+    public void openDiv(){
+        Intent div1 = new Intent(this, divLev.class);
+        startActivity(div1);
+    }
+
+//    public void openDay(){
+//        Intent day1 = new Intent(this, mainMenu.class);
+//        startActivity(day1);
+//    }
+//
+//    public void openNight(){
+//        Intent night1 = new Intent(this, mainMenu.class);
+//        startActivity(night1);
+//    }
 }
