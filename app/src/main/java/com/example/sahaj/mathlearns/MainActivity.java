@@ -18,7 +18,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -73,16 +75,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         viewmain = this.getWindow().getDecorView();
+
+        //
+//        setContentView(R.layout.activity_day);
+//        final TextView ColorText = (TextView)findViewById(R.id.Color_Test);
+//        Switch switch1 = (Switch)findViewById(R.id.switch1); //switch
+//        switch1.setOnCheckedChangeListener(this);
+
+//        viewmain = this.getWindow().getDecorView();
+//        if(addLevOne.getDa()==true){
+//            switch1.setChecked(true);
+//        }
+//        else{
+//            switch1.setChecked(false);
+//        }
+
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item){
         switch(item.getItemId()){
             case R.id.day_Mode:
-                ColorText.setText("Day Mode");
-                ColorText.setTextColor(Color.BLACK);
-                view.setBackgroundColor(Color.WHITE);
                 addLevOne.setDa(false);
+                break;
+
+            case R.id.night_Mode:
+                addLevOne.setDa(true);
                 break;
         }
         return true;
