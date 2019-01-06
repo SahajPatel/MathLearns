@@ -150,18 +150,10 @@ public class Day_Test_Class extends AppCompatActivity implements CompoundButton.
         Intent add1 = new Intent(this, addLevOne.class);
         startActivity(add1);
     }
-    //    public void openAdd2(){
-//        Intent add2 = new Intent(this, addLevTwo.class);
-//        startActivity(add2);
-//    }
     public void openSub1(){
         Intent sub1 = new Intent(this, subLevOne.class);
         startActivity(sub1);
     }
-    //    public void openSub2(){
-//        Intent sub2 = new Intent(this, subLevTwo.class);
-//        startActivity(sub2);
-//    }
     public void openMult1(){
         Intent mult1 = new Intent(this, multLevOne.class);
         startActivity(mult1);

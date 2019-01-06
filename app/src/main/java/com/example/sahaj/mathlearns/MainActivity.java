@@ -76,20 +76,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         viewmain = this.getWindow().getDecorView();
 
-        //
-//        setContentView(R.layout.activity_day);
-//        final TextView ColorText = (TextView)findViewById(R.id.Color_Test);
-//        Switch switch1 = (Switch)findViewById(R.id.switch1); //switch
-//        switch1.setOnCheckedChangeListener(this);
-
-//        viewmain = this.getWindow().getDecorView();
-//        if(addLevOne.getDa()==true){
-//            switch1.setChecked(true);
-//        }
-//        else{
-//            switch1.setChecked(false);
-//        }
-
     }
 
     @Override
@@ -146,9 +132,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 openday();
                 return true;
         }
-//            if(mtog.onOptionsItemSelected(item)){
-//                return true;
-//            }
+
                 return super.onOptionsItemSelected(item);
     }
     public void openAdd1(){
