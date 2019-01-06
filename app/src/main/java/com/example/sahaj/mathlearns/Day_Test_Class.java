@@ -18,7 +18,7 @@ package com.example.sahaj.mathlearns;
 public class Day_Test_Class extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
     View view;
     addLevOne o = new addLevOne();
-
+    boolean night;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,11 +26,17 @@ public class Day_Test_Class extends AppCompatActivity implements CompoundButton.
         Button Day = findViewById(R.id.Day_Test);
         Button Night = findViewById(R.id.night_Test);
        final TextView ColorText = (TextView)findViewById(R.id.Color_Test);
-
         Switch switch1 = (Switch)findViewById(R.id.switch1); //switch
         switch1.setOnCheckedChangeListener(this);
 
         view = this.getWindow().getDecorView();
+        if(addLevOne.getDa()==true){
+            switch1.setChecked(true);
+        }
+        else{
+            switch1.setChecked(false);
+        }
+
 
 
 

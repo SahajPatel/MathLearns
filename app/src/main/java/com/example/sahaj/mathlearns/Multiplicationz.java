@@ -40,11 +40,11 @@ public class Multiplicationz {
     static int difficulty1 = 6;
 
     static Random randomGen = new Random();
-    static double num1 = 0;
-    static double num2 = 0;
-    static double num3 = 0;
-    static double num4 = 0;
-    static double result = 0;
+    static int num1 = 0;
+    static int num2 = 0;
+    static int num3 = 0;
+    static int num4 = 0;
+    static int result = 0;
 
     public static double isRight(Double submitted) {
         result = num1 * num2;
@@ -77,7 +77,7 @@ public class Multiplicationz {
     public static String askMe() {
         num1 = randomGen.nextInt(difficulty - 1) + 1;
         num2 = randomGen.nextInt(difficulty - 1) + 1;
-        return "What is " + num1 + " * " + num2;
+        return "What is " + num1 + " x " + num2;
     }
     public static String askMes2(){
         num3 = randomGen.nextInt(difficulty1 - 1) + 1;

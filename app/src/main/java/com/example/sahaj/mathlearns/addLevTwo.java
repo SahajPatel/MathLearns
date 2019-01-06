@@ -60,31 +60,12 @@ public class addLevTwo extends AppCompatActivity {
             case R.id.addingLevel:
                 Toast.makeText(this, "Addition selected", Toast.LENGTH_SHORT).show();
                 return true;
-//
-//            case R.id.subitem1:
-//                // Toast.makeText(this, "SUB1", Toast.LENGTH_SHORT).show();
-//                openAdd1();
-//                return true;
-
-//            case R.id.subitem2:
-//                //Toast.makeText(this, "SUB2", Toast.LENGTH_SHORT).show();
-//                openAdd2();
-//                return true;
 
             case R.id.minusLevel:
                 Toast.makeText(this, "Subtraction selected", Toast.LENGTH_SHORT).show();
                 openSub1();
                 return true;
 
-//            case R.id.subitem3:
-//                // Toast.makeText(this, "SUB1", Toast.LENGTH_SHORT).show();
-//                openSub1();
-//                return true;
-
-//            case R.id.subitem4:
-//                //Toast.makeText(this, "SUB2", Toast.LENGTH_SHORT).show();
-//                openSub2();
-//                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -93,10 +74,7 @@ public class addLevTwo extends AppCompatActivity {
         Intent add1 = new Intent(this, addLevOne.class);
         startActivity(add1);
     }
-//    public void openAdd2(){
-//        Intent add2 = new Intent(this, addLevTwo.class);
-//        startActivity(add2);
-//    }
+
     public void openSub1(){
         Intent sub1 = new Intent(this, subLevOne.class);
         startActivity(sub1);

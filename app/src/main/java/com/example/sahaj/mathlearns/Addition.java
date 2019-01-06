@@ -23,17 +23,13 @@ public class Addition {
         Addition.difficulty = difficulty;
     }
 
-
-
-
-    //    int submitted = Integer.parseInt(answerText.getText().toString());
     static int correct = 0;
     static int difficulty = 20;
 
     static Random randomGen  = new Random();
-    static double num1 = 0;
-    static double num2 = 0;
-    static double result  = 0;
+    static int num1 = 0;
+    static int num2 = 0;
+    static int result  = 0;
     public static double isRight(Double submitted){
         result  = num1 + num2;
         if(submitted == result) {
