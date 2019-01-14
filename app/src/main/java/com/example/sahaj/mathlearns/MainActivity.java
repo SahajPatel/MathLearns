@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     boolean isDay = true;
 
+    boolean isMultChoice = false;
+
 
     private DrawerLayout drawLay;
 //    private ActionBarDrawerToggle mtog;
@@ -55,27 +57,43 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Button fillIn = findViewById(R.id.fillIn);
+        Button MC = findViewById(R.id.multCho);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
         android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        toolbar.setNavigationIcon(R.drawable.downarrow);
         drawLay = findViewById(R.id.setting_menu);
         ActionBarDrawerToggle mtog = new ActionBarDrawerToggle(this, drawLay, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-
         drawLay.addDrawerListener(mtog);
         mtog.syncState();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         viewmain = this.getWindow().getDecorView();
 
+        MC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addLevOne.setMultC(true);
+
+            }
+        });
+
+        fillIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addLevOne.setMultC(false);
+
+            }
+        });
     }
 
     @Override
@@ -87,6 +105,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.night_Mode:
                 addLevOne.setDa(true);
+                break;
+
+            case R.id.addMode:
+                Intent add1 = new Intent(this, addLevOne.class);
+                startActivity(add1);
                 break;
         }
         return true;
@@ -151,7 +174,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void openMain(){
-        Intent main1 = new Intent(this, mainMenu.class);
+        Intent main1 = new Intent(this, MainActivity.class);
         startActivity(main1);
     }
 
@@ -159,6 +182,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent day1 = new Intent(this, Day_Test_Class.class);
         startActivity(day1);
     }
-
 
 }

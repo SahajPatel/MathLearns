@@ -185,7 +185,7 @@ public class subLevOne extends AppCompatActivity {
         startActivity(mult1);
     }
     public void openMain(){
-        Intent main1 = new Intent(this, mainMenu.class);
+        Intent main1 = new Intent(this, MainActivity.class);
         startActivity(main1);
     }
 

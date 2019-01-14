@@ -159,7 +159,7 @@ public class Day_Test_Class extends AppCompatActivity implements CompoundButton.
         startActivity(mult1);
     }
     public void openMain(){
-        Intent main1 = new Intent(this, mainMenu.class);
+        Intent main1 = new Intent(this, MainActivity.class);
         startActivity(main1);
     }
     public void openDiv(){

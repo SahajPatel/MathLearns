@@ -9,8 +9,13 @@
             android:id="@+id/day_Mode"
             android:icon="@drawable/uparrow"
             android:title="Day Mode" />
+
          <item android:id="@+id/night_Mode"
              android:title="Night Mode"
+             android:icon="@drawable/downarrow"
+             ></item>
+         <item android:id="@+id/addMode"
+             android:title="Addition"
              android:icon="@drawable/downarrow"
          />
     </group>
