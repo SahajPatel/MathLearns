@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "339285062570",
+    "firebase_url": "https://mathlearns-b6736.firebaseio.com",
+    "project_id": "mathlearns-b6736",
+    "storage_bucket": "mathlearns-b6736.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339285062570:android:82ccc21ad630988d",
+        "android_client_info": {
+          "package_name": "com.example.sahaj.mathlearns"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "339285062570-elfq59ehm2qt5ongvd4mopa2nqtc4npg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sahaj.mathlearns",
+            "certificate_hash": "bb64ad5175da8fc814cd99326cc5f6f94478c425"
+          }
+        },
+        {
+          "client_id": "339285062570-17k4usjqu5c0jr3qhncqniivdtv06l23.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBj7KAyHjbno8rwh2UbK4bNIGknHlxihbw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "339285062570-17k4usjqu5c0jr3qhncqniivdtv06l23.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,14 +1,14 @@
 package com.example.sahaj.mathlearns;
 
 import java.util.Random;
-public class Subtraction {
+public class SubtractionFB {
 
     public static int getCorrect() {
         return correct;
     }
 
     public static void setCorrect(int correct) {
-        Subtraction.correct = correct;
+        SubtractionFB.correct = correct;
     }
 
     public static int getDifficulty() {
@@ -16,7 +16,7 @@ public class Subtraction {
     }
 
     public static void setDifficulty(int difficulty) {
-        Subtraction.difficulty = difficulty;
+        SubtractionFB.difficulty = difficulty;
     }
 
     //    int submitted = Integer.parseInt(answerText.getText().toString());
@@ -46,9 +46,5 @@ public class Subtraction {
         num2 = randomGen.nextInt(difficulty -1)+1;
         return "What is " + num1 + " - " + num2;
     }
-    public static String askMes2(){
-        num1 = randomGen.nextInt(difficulty-1)+1;
-        num2 = randomGen.nextInt(difficulty-1)+1;
-        return "What is " + num1 + " - " + num2;
-    }
+
 }

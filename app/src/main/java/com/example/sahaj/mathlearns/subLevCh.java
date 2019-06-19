@@ -10,15 +10,15 @@ import android.widget.TextView;
 import java.util.Random;
 
 
-public class subLevTwo extends AppCompatActivity {
+public class subLevCh extends AppCompatActivity {
 
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_add_lev_one);
+//        setContentView(R.layout.fb);
 //        EditText answerText;
 //        final TextView Questions = (TextView) findViewById(R.id.Questions);
-//        Questions.setText(Subtraction.askMes2());
+//        Questions.setText(SubtractionFB.askMes2());
 //        Button Submit = (Button) findViewById(R.id.Submit);
 //        Submit.setOnClickListener(new View.OnClickListener() {
 //                                      @Override
@@ -38,11 +38,11 @@ public class subLevTwo extends AppCompatActivity {
 //                                          int num2 = randomGen.nextInt();
 //                                          int result  = num1 - num2;
 //
-//                                          if(Subtraction.isRight(submitted) == 1){
+//                                          if(SubtractionFB.isRight(submitted) == 1){
 //                                              correctTextView.setText("Correct");
-//                                              Questions.setText(Subtraction.askMes2());
+//                                              Questions.setText(SubtractionFB.askMes2());
 //                                          }else {
-//                                              if (Subtraction.isRight(submitted) == -1) {
+//                                              if (SubtractionFB.isRight(submitted) == -1) {
 //                                                  correctTextView.setText("Try Again");
 //                                              }
 //                                          }

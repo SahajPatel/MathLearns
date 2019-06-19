@@ -22,19 +22,19 @@
         </activity>
 
 
-        <activity android:name=".addLevOne"></activity>
+        <activity android:name=".addLevFB"></activity>
 
-        <activity android:name=".addLevTwo"></activity>
+        <activity android:name=".addLevCh"></activity>
 
-        <activity android:name=".subLevOne"></activity>
+        <activity android:name=".subLevFB"></activity>
 
-        <activity android:name=".subLevTwo"></activity>
+        <activity android:name=".subLevCh"></activity>
 
-        <activity android:name=".multLevOne"></activity>
+        <activity android:name=".multLevFB"></activity>
 
-        <activity android:name=".multLevTwo"></activity>
+        <activity android:name=".multLevCh"></activity>
 
-         <activity android:name=".divLev"></activity>
+         <activity android:name=".divLevFB"></activity>
 
         <!-- <activity android:name=".divLevtwo"></activity> -->
         <activity android:name=".mainMenu"></activity>

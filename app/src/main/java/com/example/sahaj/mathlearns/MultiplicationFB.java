@@ -2,14 +2,14 @@ package com.example.sahaj.mathlearns;
 
 import java.util.Random;
 
-public class Multiplicationz {
+public class MultiplicationFB {
 
     public static int getCorrect() {
         return correct;
     }
 
     public static void setCorrect(int correct) {
-        Multiplicationz.correct = correct;
+        MultiplicationFB.correct = correct;
     }
 
     public static int getDifficulty() {
@@ -17,14 +17,14 @@ public class Multiplicationz {
     }
 
     public static void setDifficulty(int difficulty) {
-        Multiplicationz.difficulty = difficulty;
+        MultiplicationFB.difficulty = difficulty;
     }
     public static int getCorrect1() {
         return correct1;
     }
 
     public static void setCorrect1(int correct1) {
-        Multiplicationz.correct1 = correct1;
+        MultiplicationFB.correct1 = correct1;
     }
 
     public static int getDifficulty1() {
@@ -32,7 +32,7 @@ public class Multiplicationz {
     }
 
     public static void setDifficulty1(int difficulty1) {
-        Multiplicationz.difficulty1 = difficulty1;
+        MultiplicationFB.difficulty1 = difficulty1;
     }
     static int correct = 0;
     static int correct1 =0;

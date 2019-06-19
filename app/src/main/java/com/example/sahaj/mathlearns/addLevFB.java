@@ -2,8 +2,8 @@ package com.example.sahaj.mathlearns;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -12,45 +12,79 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class multLevOne extends AppCompatActivity {
+
+public class addLevFB extends AppCompatActivity {
+    View viewadd;
+    //This affects the day/night themes
+    public static void setDa(boolean isDa) {
+        addLevFB.Da = isDa;
+    }
+    public static boolean getDa(){
+        return Da;
+    }
+    static boolean Da;
+
+    //this affects Multiple choice
+    public static void setMultC(boolean isMultC) {addLevFB.MultC = isMultC;}
+    public static boolean getMultC() { return MultC;}
+    static boolean MultC;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        final int level = 1;
-        final int correct = 0;
+//        final int level = 1;
+//        final int correct = 0;
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_lev_one);
+        final TextView correctTextView = findViewById(R.id.Correct);
+
+        setContentView(R.layout.fb);
 
         Button increase = findViewById(R.id.increase);
         Button decrease = findViewById(R.id.decrease);
 
-        final TextView Questions =  findViewById(R.id.Questions);
-        Questions.setText(Multiplicationz.askMe());
+        final TextView Questions = findViewById(R.id.Questions);
+        Questions.setText(AdditionFB.askMe());
+
+        final TextView Level = findViewById(R.id.Level);
+        Level.setTextColor(Color.CYAN);
+        Level.setText("AdditionFB Level " + (AdditionFB.getDifficulty() - 3));
+
+        viewadd = this.getWindow().getDecorView();
+
         Button Submit = findViewById(R.id.Submit);
 
         final TextView correctView = findViewById(R.id.correctCount);
         correctView.setTextColor(Color.GREEN);
 
+        final EditText answerText = findViewById(R.id.answerText);
+        if (Da) {
+            answerText.setTextColor(Color.WHITE);
+
+        } else {
+            answerText.setTextColor(Color.BLACK);
+        }
+
         Submit.setOnClickListener(new View.OnClickListener() {
                                       @Override
                                       public void onClick(View v) {
-                                          EditText answerText = findViewById(R.id.answerText);
                                           double submitted = 0;
-                                          TextView correctTextView =  findViewById(R.id.Correct);
-                                          if(answerText.getText().length()==0){
+                                          TextView correctTextView = findViewById(R.id.Correct);
+                                          if (answerText.getText().length() == 0) {
                                               correctTextView.setText("Please submit an answer");
-                                          }else{
-                                              if(answerText.getText().length()!=0) {
+                                          } else {
+                                              if (answerText.getText().length() != 0) {
                                                   submitted = Double.parseDouble(answerText.getText().toString());
-                                              }}
+                                              }
+                                          }
 
-                                          if(Multiplicationz.isRight(submitted) == 1){
+                                          if (AdditionFB.isRight(submitted) == 1) {
                                               correctTextView.setTextColor(Color.GREEN);
                                               correctTextView.setText("Correct");
-                                              Multiplicationz.setCorrect(Multiplicationz.getCorrect() + 1);
-                                              correctView.setText(Integer.toString(Multiplicationz.getCorrect()));
-                                              Questions.setText(Multiplicationz.askMe());
-                                          }else {
-                                              if (Multiplicationz.isRight(submitted) == -1) {
+                                              answerText.setText("");
+                                              AdditionFB.setCorrect(AdditionFB.getCorrect() + 1);
+                                              correctView.setText(Integer.toString(AdditionFB.getCorrect()));
+                                              Questions.setText(AdditionFB.askMe());
+                                          } else {
+                                              if (AdditionFB.isRight(submitted) == -1) {
                                                   correctTextView.setTextColor(Color.RED);
                                                   correctTextView.setText("Try Again");
                                               }
@@ -58,10 +92,12 @@ public class multLevOne extends AppCompatActivity {
                                       }
                                   }
         );
+
         increase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Multiplicationz.setDifficulty(Multiplicationz.getDifficulty()+1);
+                AdditionFB.setDifficulty(AdditionFB.getDifficulty() + 1);
+                Level.setText("AdditionFB Level " + (AdditionFB.getDifficulty() - 3));
 
             }
         });
@@ -69,11 +105,20 @@ public class multLevOne extends AppCompatActivity {
         decrease.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Multiplicationz.getDifficulty() >= 5) {
-                    Multiplicationz.setDifficulty(Multiplicationz.getDifficulty() - 1);
+                if (AdditionFB.getDifficulty() >= 5) {
+                    AdditionFB.setDifficulty(AdditionFB.getDifficulty() - 1);
+                    Level.setText("AdditionFB Level " + (AdditionFB.getDifficulty() - 3));
                 }
             }
         });
+
+        if (!Da) {
+            viewadd.setBackgroundColor(Color.WHITE);
+        } else {
+            viewadd.setBackgroundColor(Color.parseColor("#2c2f33"));
+            Questions.setTextColor(Color.WHITE);
+        }
+
     }
 
 
@@ -88,75 +133,42 @@ public class multLevOne extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
             case R.id.addingLevel:
-//                Toast.makeText(this, "Addition selected", Toast.LENGTH_SHORT).show();
                 openAdd1();
                 return true;
-//
-//            case R.id.subitem1:
-//               // Toast.makeText(this, "SUB1", Toast.LENGTH_SHORT).show();
-//                openAdd1();
-//                return true;
-//
-//            case R.id.subitem2:
-//                //Toast.makeText(this, "SUB2", Toast.LENGTH_SHORT).show();
-//                openAdd2();
-//                return true;
 
             case R.id.minusLevel:
-//                Toast.makeText(this, "Subtraction selected", Toast.LENGTH_SHORT).show();
                 openSub1();
                 return true;
 
-//            case R.id.subitem3:
-//                openSub1();
-//                return true;
-//
-//            case R.id.subitem4:
-//                openSub2();
-//                return true;
-
             case R.id.timesLevel:
-//                Toast.makeText(this, "Multiplication selected", Toast.LENGTH_SHORT).show();
                 openMult1();
                 return true;
 
-//            case R.id.subitem5:
-//                openMult1();
-//                return true;
-
-//            case R.id.subitem6:
-//                openMult2();
-//                return true;
             case R.id.mainMenus:
-//                Toast.makeText(this, "Multiplication selected", Toast.LENGTH_SHORT).show();
                 openMain();
                 return true;
             case R.id.divideLevel:
-//                Toast.makeText(this, "Multiplication selected", Toast.LENGTH_SHORT).show();
                 openDiv();
                 return true;
+
+            case R.id.dayLevel:
+                openday();
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
-        }
-    }
+        }}
+
     public void openAdd1(){
-        Intent add1 = new Intent(this, addLevOne.class);
+        Intent add1 = new Intent(this, addLevFB.class);
         startActivity(add1);
     }
-    //    public void openAdd2(){
-//        Intent add2 = new Intent(this, addLevTwo.class);
-//        startActivity(add2);
-//    }
     public void openSub1(){
-        Intent sub1 = new Intent(this, subLevOne.class);
+        Intent sub1 = new Intent(this, subLevFB.class);
         startActivity(sub1);
     }
-    //    public void openSub2(){
-//        Intent sub2 = new Intent(this, subLevTwo.class);
-//        startActivity(sub2);
-//    }
     public void openMult1(){
-        Intent mult1 = new Intent(this, multLevOne.class);
+        Intent mult1 = new Intent(this, multLevFB.class);
         startActivity(mult1);
     }
     public void openMain(){
@@ -164,7 +176,11 @@ public class multLevOne extends AppCompatActivity {
         startActivity(main1);
     }
     public void openDiv(){
-        Intent div1 = new Intent(this, divLev.class);
+        Intent div1 = new Intent(this, divLevFB.class);
         startActivity(div1);
+    }
+    public void openday(){
+        Intent day1 = new Intent(this, Day_Test_Class.class);
+        startActivity(day1);
     }
 }

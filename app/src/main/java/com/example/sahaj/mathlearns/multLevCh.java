@@ -7,13 +7,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class multLevTwo extends AppCompatActivity {
+public class multLevCh extends AppCompatActivity {
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_add_lev_one);
+//        setContentView(R.layout.fb);
 //        final TextView Questions =  findViewById(R.id.Questions);
-//        Questions.setText(Multiplicationz.askMes2());
+//        Questions.setText(MultiplicationFB.askMes2());
 //        Button Submit = findViewById(R.id.Submit);
 //        Submit.setOnClickListener(new View.OnClickListener() {
 //                                      @Override
@@ -28,11 +28,11 @@ public class multLevTwo extends AppCompatActivity {
 //                                                  submitted = Double.parseDouble(answerText.getText().toString());
 //                                              }}
 //
-//                                          if(Multiplicationz.isRight(submitted) == 1){
+//                                          if(MultiplicationFB.isRight(submitted) == 1){
 //                                              correctTextView.setText("Correct");
-//                                              Questions.setText(Multiplicationz.askMes2());
+//                                              Questions.setText(MultiplicationFB.askMes2());
 //                                          }else {
-//                                              if (Multiplicationz.isRight(submitted) == -1) {
+//                                              if (MultiplicationFB.isRight(submitted) == -1) {
 //                                                  correctTextView.setText("Try Again");
 //                                              }
 //                                          }
